@@ -1,0 +1,59 @@
+{
+  "name": "node-rest",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API REST exemple on node.js ",
+  "private": false,
+  "scripts": {
+    "start": "nodemon --experimental-json-modules ./main.js",
+    "test": "",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@hapi/joi": "17.1.1",
+    "bcrypt": "^5.0.0",
+    "camelcase": "^6.0.0",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.4.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql2": "latest",
+    "nodemon": "2.0.4",
+    "pg-promise": "10.5.6",
+    "rotating-file-stream": "^2.1.1",
+    "swagger-ui-express": "4.1.4"
+  },
+  "devDependencies": {
+    "eslint": "5.10.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "jasmine": "^3.6.1",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-core": "^3.6.0",
+    "jasmine-esm": "0.3.1"
+  },
+  "exports": {
+    "./service": "./utils/nodeExpress/Service.js",
+    "./server": "./utils/nodeExpress/Server.js",
+    "./controller": "./utils/nodeExpress/Controller.js",
+    "./logger": "./utils/loggers/Logger.js",
+    "./httpResolver": "./utils/loggers/HttpResolver.js",
+    "./clone": "./utils/general/Clone.js",
+    "./collection": "./utils/general/Collection.js",
+    "./snakeToCamelParser": "./utils/general/SnakeToCamelParser.js",
+    "./fsPromise": "./utils/file/FsPromise.js",
+    "./repository": "./utils/database/Repository.js",
+    "./mysqlParser": "./utils/database/MysqlParser.js",
+    "./postgresParser": "./utils/database/PostgresParser.js",
+    "./auth": "./utils/authentication/Auth.js",
+    "./password": "./utils/authentication/Password.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixeltraits/node-rest"
+  },
+  "author": "Pixeltraits",
+  "license": "MIT"
+}
