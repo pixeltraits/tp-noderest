@@ -17,25 +17,36 @@ export default class FormService extends Service {
         method: this.HTTP_METHODS.POST,
         schema: formSchema,
         roles: [ROLES.PUBLIC]
+      },
+      {
+        route: '/form',
+        execute: 'getForm',
+        method: this.HTTP_METHODS.GET,
+        schema: null,
+        roles: [ROLES.PUBLIC]
       }
     ];
   }
 
   async addForm(req, res) {
-    const login = {
-      email: req.body.email,
-      password: req.body.password
-    };
-
     try {
-      console.log(jsonDataFile);
-      this.writeJsonData(login);
-      return res.send(login);
+      // console.log(jsonDataFile);
+      this.writeJsonData(req.body);
+      return res.send();
     } catch (error) {
       return HttpResolver.handle(error, `AddFormService#post`, res);
     }
   }
 
+  async getForm(req, res) {
+    try {
+      console.log(jsonDataFile);
+      // this.writeJsonData(login);
+      return res.send(jsonDataFile);
+    } catch (error) {
+      return HttpResolver.handle(error, `AddFormService#post`, res);
+    }
+  }
   writeJsonData(jsonData) {
     fs.writeFileSync('./app/services/form/data/formData.json', JSON.stringify(jsonData));
   }

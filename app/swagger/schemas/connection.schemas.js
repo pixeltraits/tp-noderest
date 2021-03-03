@@ -7,6 +7,21 @@ export const Login = {
     password: {
       type: 'string',
       format: 'password'
+    },
+    brand: {
+      type: 'string'
+    },
+    immat: {
+      type: 'string'
+    },
+    adress: {
+      type: 'string'
+    },
+    nom: {
+      type: 'string'
+    },
+    prenom: {
+      type: 'string'
     }
   }
 };

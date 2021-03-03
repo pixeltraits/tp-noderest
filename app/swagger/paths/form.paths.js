@@ -24,7 +24,25 @@ const addForm = {
     }
   }
 };
+const getForm = {
+  get: {
+    tags: ['form'],
+    summary: 'Login',
+   
+    responses: {
+      200: {
+        description: 'OK'
+      },
+      401: {
+        description: 'Unauthorized'
+      },
+      500: {
+        description: 'Unexpected error'
+      }
+    }
+  }
+};
 
 export default {
-  '/form': addForm
+  '/form': {...addForm,...getForm}
 };
